@@ -5,20 +5,20 @@
   apt: name=python-psutil
 
 - name: Copy wallpaper file
-  copy: src=files/wallpaper.jpg dest=/home/jay/.wallpaper.jpg owner=jay group=jay mode=600
+  copy: src=files/wallpaper.jpg dest=/home/zanedufour/.wallpaper.jpg owner=zanedufour group=zanedufour mode=600
 
 - name: Set GNOME wallpaper
-  become_user: jay
-  dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///home/jay/.wallpaper.jpg'"
+  become_user: zanedufour
+  dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///home/zanedufour/.wallpaper.jpg'"
 
 - name: Copy lockscreenfile
-  become_user: jay
-  copy: src=files/lockscreen.jpg dest=/home/jay/.lockscreen.jpg owner=jay group=jay mode=600
+  become_user: zanedufour
+  copy: src=files/lockscreen.jpg dest=/home/zanedufour/.lockscreen.jpg owner=zanedufour group=zanedufour mode=600
 
 - name: Set lock screen background
-  become_user: jay
-  dconf: key="/org/gnome/desktop/screensaver/picture-uri" value="'file:///home/jay/.lockscreen.jpg'"
+  become_user: zanedufour
+  dconf: key="/org/gnome/desktop/screensaver/picture-uri" value="'file:///home/zanedufour/.lockscreen.jpg'"
 
 - name: Set GTK theme
-  become_user: jay
+  become_user: zanedufour
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
