@@ -2,7 +2,7 @@
   apt: name=arc-theme
 
 - name: Install psutil package
-  apt: name=python-psutil
+  apt: name=python3-psutil
 
 - name: Copy wallpaper file
   copy: src=files/wallpaper.jpg dest=/home/zanedufour/.wallpaper.jpg owner=zanedufour group=zanedufour mode=600
