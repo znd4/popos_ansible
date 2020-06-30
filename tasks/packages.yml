@@ -1,6 +1,13 @@
+- name: Add apt repositories
+  repo: 'ppa:system76/pop'
+  state: present
+
 - name: Install packages
   apt: name={{item}}
   with_items:
     - htop
     - mc
     - tmux
+    - gnome-tweaks
+    - gnome-shell-extensions
+    - pop-theme

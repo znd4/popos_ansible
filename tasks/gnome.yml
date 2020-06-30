@@ -1,6 +1,16 @@
 - name: Install arc theme
   apt: name=arc-theme
 
+- name: create ~/.themes folder
+  file:
+    path: /home/zanedufour/.themes
+    state: directory
+
+- name: create ~/.icons folder
+  file:
+    path: /home/zanedufour/.icons
+    state: directory
+
 - name: Install psutil package
   apt: name=python3-psutil
 
@@ -21,4 +31,4 @@
 
 - name: Set GTK theme
   become_user: zanedufour
-  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc-Dark'"
+  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Pop-dark'"
