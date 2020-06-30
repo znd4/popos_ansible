@@ -1,6 +1,6 @@
-- name: Add apt repositories
-  repo: 'ppa:system76/pop'
-  state: present
+- apt_repository:
+    repo: 'ppa:system76/pop'
+    state: present
 
 - name: Install packages
   apt: name={{item}}
