@@ -12,6 +12,8 @@
       - gnome-shell-extensions
       - pop-theme
       - snapd
+    deb:
+      - https://discordapp.com/api/download?platform=linux&format=deb
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
