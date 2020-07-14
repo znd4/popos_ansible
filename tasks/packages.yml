@@ -18,13 +18,11 @@
     name: flathub
     state: present
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    method: user
 
 - name: Install flatpaks
   flatpak:
     name: "{{ item }}"
     state: present
-    method: user
   loop:
     - org.videolan.VLC
     - com.meetfranz.Franz
