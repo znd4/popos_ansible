@@ -3,22 +3,22 @@
     state: present
 
 - name: Install apt packages
-  apt: name={{item}}
-  with_items:
-    - htop
-    - mc
-    - tmux
-    - gnome-tweaks
-    - gnome-shell-extensions
-    - pop-theme
+  apt:
+    name:
+      - htop
+      - mc
+      - tmux
+      - gnome-tweaks
+      - gnome-shell-extensions
+      - pop-theme
 
 - name: Install flatpaks
   flatpak:
-    name: "{{ item }}"
+    name: 
+      - org.videolan.VLC
+      - com.meetfranz.Franz
     state: present
-  loop:
-    - org.videolan.VLC
-    - com.meetfranz.Franz
+    method: user
 
 - name: Install snaps
   snap:
