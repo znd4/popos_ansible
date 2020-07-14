@@ -15,11 +15,11 @@
 - name: Install flatpaks
   flatpak:
     name: "{{ item }}"
-    loop:
-      - org.videolan.VLC
-      - com.meetfranz.Franz
     state: present
     method: user
+  loop:
+    - org.videolan.VLC
+    - com.meetfranz.Franz
 
 - name: Install snaps
   snap:
