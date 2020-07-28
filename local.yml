@@ -16,8 +16,11 @@
   become: true
   roles:
     - role: markosamuli.pyenv
+      pyenv_init_shell: true
+      pyenv_home: /home/zanedufour
+      pyenv_root: /home/zanedufour/.pyenv
       pyenv_detect_existing_install: true
       pyenv_python_versions:
         - "3.6.9"
         - "3.7.6"
-        - "3.8.3"
+        - "3.8.1"
