@@ -16,7 +16,7 @@
   file:
     path: /home/ansible/.ssh/id_rsa
     owner: ansible
-    mode: '0644'
+    mode: '0600'
 
 
 - name: copy sudoers_ansible
