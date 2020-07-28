@@ -1,5 +1,17 @@
 - name: create ansible user
   user: name=ansible uid=900
 
+- name: copy ssh private key
+  copy:
+    src: /home/zanedufour/.ssh/id_rsa
+    dest: /home/ansible/.ssh/id_rsa
+
+- name: give access to ssh private key
+  file:
+    path: /home/ansible/.ssh/id_rsa
+    owner: ansible
+    mode: '0644'
+
+
 - name: copy sudoers_ansible
   copy: src=files/sudoers_ansible dest=/etc/sudoers.d/ansible owner=root group=root mode=0440
