@@ -11,3 +11,13 @@
     - include: tasks/cron.yml
     - include: tasks/packages.yml
     - include: tasks/gnome.yml
+
+- hosts: localhost
+  become: true
+  roles:
+    - role: markosamuli.pyenv
+      pyenv_detect_existing_install: true
+      pyenv_python_versions:
+        - "3.6.9"
+        - "3.7.6"
+        - "3.8.3"
