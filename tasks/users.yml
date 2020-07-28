@@ -1,6 +1,12 @@
 - name: create ansible user
   user: name=ansible uid=900
 
+- name: create /home/ansible/.ssh
+  file:
+    path: /home/ansible/.ssh
+    state: directory
+    mode: "0755"
+
 - name: copy ssh private key
   copy:
     src: /home/zanedufour/.ssh/id_rsa
