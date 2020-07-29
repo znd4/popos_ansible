@@ -1,7 +1,7 @@
 - name: install python3.8 libraries
   pip:
     name: "{{ item }}"
-    executable: pip3.8
+    executable: /home/zanedufour/.pyenv/shims/pip3.8
     extra_args: "--user"
   loop:
     - invoke
