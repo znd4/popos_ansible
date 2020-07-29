@@ -28,3 +28,8 @@
         3.6.9
         3.7.6
         3.8.1
+
+- hosts: localhost
+  become_user: zanedufour
+  tasks:
+    - include: tasks/pip.yml

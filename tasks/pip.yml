@@ -1,0 +1,6 @@
+- name: install pipx
+  pip:
+    name: pipx
+    executable: pip3.8
+    extra_args: "--user"
+      
