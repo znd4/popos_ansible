@@ -20,7 +20,11 @@
       pyenv_home: /home/zanedufour
       pyenv_root: /home/zanedufour/.pyenv
       pyenv_detect_existing_install: true
-      pyenv_python_versions:
-        - "3.6.9"
-        - "3.7.6"
-        - "3.8.1"
+      pyenv_python36_version: "3.6.9"
+      pyenv_python37_version: "3.7.6"
+      pyenv_python38_version: "3.8.1"
+      pyenv_global: >-
+        {{ pyenv_python36_version }}
+        {{ pyenv_python37_version }}
+        {{ pyenv_python38_version }}
+        system
