@@ -13,7 +13,7 @@
     - include: tasks/gnome.yml
 
 - hosts: localhost
-  become: true
+  become_user: zanedufour
   roles:
     - role: markosamuli.pyenv
       pyenv_init_shell: true
