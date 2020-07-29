@@ -14,6 +14,7 @@
 
 - hosts: localhost
   become_user: zanedufour
+  become: true
   roles:
     - role: markosamuli.pyenv
       pyenv_init_shell: true
@@ -31,5 +32,6 @@
 
 - hosts: localhost
   become_user: zanedufour
+  become: true
   tasks:
     - include: tasks/pip.yml

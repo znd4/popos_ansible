@@ -1,7 +1,9 @@
-- name: install pipx
-  command: pip3.8 install --user pipx
-  become_user: zanedufour
-    # name: pipx
-    # executable: pip3.8
-    # extra_args: "--user"
+- name: install python3.8 libraries
+  pip:
+    name: "{{ item }}"
+    executable: pip3.8
+    extra_args: "--user"
+  loop:
+    - invoke
+    - pipx
       
