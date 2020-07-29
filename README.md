@@ -10,3 +10,9 @@ I'm tired of installing everything I need on variaous computers, so I'm going to
 sudo apt update
 sudo apt install ansible
 ```
+
+## Todo
+
+- Add fira code font
+- Add pipx
+- pipx install invoke
