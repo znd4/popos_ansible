@@ -6,4 +6,9 @@
   loop:
     - invoke
     - pipx
-      
+
+- name: Install packages with pipx
+  command: "pipx install --python python3.8 {{ item }}"
+  loop:
+    - black[d]
+    - pre-commit
