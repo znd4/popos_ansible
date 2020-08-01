@@ -8,7 +8,7 @@
     - pipx
 
 - name: Install packages with pipx
-  command: "pipx install --python python3.8 {{ item }}"
+  command: "/usr/bin/env pipx install --python python3.8 {{ item }}"
   loop:
     - black[d]
     - pre-commit
