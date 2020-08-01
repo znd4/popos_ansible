@@ -15,11 +15,11 @@
 - hosts: localhost
   tasks:
     - name: Install pyenv into user accounts
-      become_user: "{{ item.user }}"
-      become: true
       include_role:
         name: markosamuli.pyenv
       vars:
+        become_user: "{{ item.user }}"
+        become: true
         pyenv_init_shell: true
         pyenv_home: "/home/{{ item.user }}/"
         pyenv_root: "/home/{{ item.user }}/.pyenv"
