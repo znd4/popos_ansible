@@ -21,8 +21,8 @@
         become_user: "{{ item }}"
         become: true
         pyenv_init_shell: true
-        pyenv_home: /home/{{ item }}
-        pyenv_root: /home/{{ item }}/.pyenv
+        pyenv_home: "/home/{{ item }}/"
+        pyenv_root: "/home/{{ item }}/.pyenv"
         pyenv_detect_existing_install: true
         pyenv_python_versions:
           - "3.6.10"
