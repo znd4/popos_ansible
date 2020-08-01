@@ -8,7 +8,7 @@
     - pipx
 
 - name: Install packages with pipx
-  command: "/usr/bin/env pipx install --python python3.8 {{ item.pkg }}"
+  command: "/home/zanedufour/.local/bin/pipx install --python python3.8 {{ item.pkg }}"
   args:
     creates:
       - /home/zanedufour/.local/bin/{{ item.cmd }}
