@@ -14,5 +14,3 @@ sudo apt install ansible
 ## Todo
 
 - Add fira code font
-- Add pipx
-- pipx install invoke
