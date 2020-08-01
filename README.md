@@ -13,4 +13,6 @@ sudo apt install ansible
 
 ## Todo
 
-- Add fira code font
+- [ ] loop usernames
+- [ ] parametrize usernames
+- [ ] Add fira code font
