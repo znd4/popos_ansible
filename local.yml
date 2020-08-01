@@ -13,10 +13,10 @@
     - include: tasks/gnome.yml
 
 - hosts: localhost
-  become_user: "{{ item }}"
-  become: true
   roles:
     - role: markosamuli.pyenv
+      become_user: "{{ item }}"
+      become: true
       pyenv_init_shell: true
       pyenv_home: /home/{{ item }}
       pyenv_root: /home/{{ item }}/.pyenv
@@ -29,9 +29,9 @@
         3.6.10
         3.7.6
         3.8.1
-  loop:
-    - zanedufour
-    - zdufour
+      loop:
+        - zanedufour
+        - zdufour
 
 - hosts: localhost
   become_user: zanedufour
