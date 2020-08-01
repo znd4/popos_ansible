@@ -22,11 +22,11 @@
       pyenv_root: /home/zanedufour/.pyenv
       pyenv_detect_existing_install: true
       pyenv_python_versions:
-        - "3.6.9"
+        - "3.6.10"
         - "3.7.6"
         - "3.8.1"
       pyenv_global: >-
-        3.6.9
+        3.6.10
         3.7.6
         3.8.1
 
