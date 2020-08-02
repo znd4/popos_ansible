@@ -16,3 +16,5 @@ sudo apt install ansible
 - [ ] loop usernames
 - [ ] parametrize usernames
 - [ ] Add fira code font
+- [ ] gnome customization
+- [ ] install visual studio code
