@@ -1,0 +1,23 @@
+- name: Install pyenv into {{ user }}
+  include_role:
+    name: markosamuli.pyenv
+  vars:
+    become_user: "{{ user }}"
+    become: true
+    pyenv_init_shell: true
+    pyenv_home: "/home/{{ user }}/"
+    pyenv_root: "/home/{{ user }}/.pyenv"
+    pyenv_detect_existing_install: true
+    pyenv_python_versions:
+      - "3.6.10"
+      - "3.7.6"
+      - "3.8.1"
+    pyenv_global: >-
+      3.6.10
+      3.7.6
+      3.8.1
+  loop:
+    - zanedufour
+    - zdufour
+  loop_control:
+    loop_var: user

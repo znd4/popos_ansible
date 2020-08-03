@@ -1,4 +1,6 @@
 - name: install python3.8 libraries
+  become_user: zanedufour
+  become: true
   pip:
     name: "{{ item }}"
     executable: /home/zanedufour/.pyenv/shims/pip3.8
@@ -8,6 +10,8 @@
     - pipx
 
 - name: Install packages with pipx
+  become_user: zanedufour
+  become: true
   command: "/home/zanedufour/.local/bin/pipx install --python python3.8 {{ item.pkg }}"
   args:
     creates:
