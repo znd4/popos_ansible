@@ -33,15 +33,15 @@
   become_user: zanedufour
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Pop-dark'"
 
-- name: customize gnome for {{ user }}
+- name: customize gnome
   include_role:
     name: PeterMosmans.customize-gnome
   vars:
     gnome_user: "{{ user }}"
     gnome_extensions:
-      - name: dash-to-dock
-        id: 307 # dash-to-dock
-        url: https://extensions.gnome.org/extension/307/dash-to-dock/
+      - id: 307 # dash-to-dock
+      # - name: dash-to-dock
+      #   url: https://extensions.gnome.org/extension/307/dash-to-dock/
     # become_user: "{{ user }}"
     # become: true
   loop:
