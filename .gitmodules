@@ -4,6 +4,3 @@
 [submodule "roles/PeterMosmans.customize-gnome"]
 	path = roles/PeterMosmans.customize-gnome
 	url = git@github.com:PeterMosmans/ansible-role-customize-gnome
-[submodule "roles/wtanaka.slack"]
-	path = roles/wtanaka.slack
-	url = git@github.com:zdog234/ansible-role-slack.git
