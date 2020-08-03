@@ -10,16 +10,17 @@
 - name: Install apt packages
   apt:
     name:
-      - htop
-      - mc
-      - tmux
-      - gnome-tweaks
+      - fonts-firacode
       - gnome-shell-extensions
+      - gnome-tweaks
+      - htop
+      - libssl-dev
+      - mc
+      - openconnect
       - pop-theme
       - snapd
-      - openconnect
+      - tmux
       - xclip
-      - libssl-dev
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
