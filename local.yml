@@ -13,3 +13,4 @@
     - include: tasks/gnome.yml
     - include: tasks/pyenv.yml
     - include: tasks/pip.yml
+    - include: tasks/slack.yml
