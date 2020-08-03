@@ -39,7 +39,9 @@
   vars:
     gnome_user: "{{ user }}"
     gnome_extensions:
-      - id: 307 # dash-to-dock
+      - name: dash-to-dock@micxgx.gmail.com
+        id: 307 # dash-to-dock
+        url: https://extensions.gnome.org/download-extension/dash-to-dock@micxgx.gmail.com.zip
       # - name: dash-to-dock
       #   url: https://extensions.gnome.org/extension/307/dash-to-dock/
     # become_user: "{{ user }}"
