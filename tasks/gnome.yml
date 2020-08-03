@@ -32,3 +32,17 @@
 - name: Set GTK theme
   become_user: zanedufour
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Pop-dark'"
+
+- name: customize gnome for {{ user }}
+  include_role:
+    name: PeterMosmans.customize-gnome
+  vars:
+    gnome_extensions:
+      - id: 307 # dash-to-dock
+    become_user: "{{ user }}"
+    become: true
+  loop:
+    - zanedufour
+    - zdufour
+  loop_control:
+    loop_var: user
