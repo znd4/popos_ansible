@@ -1,6 +1,9 @@
 - apt_repository:
-    repo: 'ppa:system76/pop'
+    repo: "{{ item }}"
     state: present
+  loop:
+    - universe
+    - ppa:system76/pop
 
 - name: Install apt packages
   apt:
