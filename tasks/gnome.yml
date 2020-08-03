@@ -37,12 +37,13 @@
   include_role:
     name: PeterMosmans.customize-gnome
   vars:
+    gnome_user: "{{ user }}"
     gnome_extensions:
       - name: dash-to-dock
         id: 307 # dash-to-dock
         url: https://extensions.gnome.org/extension/307/dash-to-dock/
-    become_user: "{{ user }}"
-    become: true
+    # become_user: "{{ user }}"
+    # become: true
   loop:
     - zanedufour
     - zdufour
