@@ -41,7 +41,7 @@
     gnome_extensions:
       - name: dash-to-dock@micxgx.gmail.com
         id: 307 # dash-to-dock
-        url: https://extensions.gnome.org/download-extension/dash-to-dock@micxgx.gmail.com.zip
+        url: https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.zip
       # - name: dash-to-dock
       #   url: https://extensions.gnome.org/extension/307/dash-to-dock/
     # become_user: "{{ user }}"
