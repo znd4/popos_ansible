@@ -46,6 +46,9 @@
       - schema: org.gnome.desktop.peripherals.touchpad
         key: click-method
         value: areas
+    gnome_dconf:
+      - key: /org/gnome/shell/extensions/dash-to-dock/show-trash
+        value: "false"
   loop:
     - zanedufour
     - zdufour
