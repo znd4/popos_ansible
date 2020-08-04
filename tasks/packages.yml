@@ -10,6 +10,7 @@
 - name: Install apt packages
   apt:
     name:
+      - dconf-editor
       - fonts-firacode
       - gnome-shell-extensions
       - gnome-tweaks
