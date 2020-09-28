@@ -37,3 +37,7 @@
     - org.videolan.VLC
     - com.meetfranz.Franz
     - com.discordapp.Discord
+
+- name: install visual studio code (vscode)
+  include_role:
+    name: gantsign.visual-studio-code
