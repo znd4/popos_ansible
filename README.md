@@ -7,8 +7,26 @@ I'm tired of installing everything I need on variaous computers, so I'm going to
 ## Installing Ansible
 
 ```bash
-sudo apt update
-sudo apt install ansible
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+```
+
+## Installing invoke
+
+```bash
+sudo apt install python3-pip
+
+sudo apt install python3-venv
+
+pip3 install --user invoke
+```
+
+## Set up ansible job
+
+```bash
+python3 -m invoke pull
 ```
 
 ## Todo
