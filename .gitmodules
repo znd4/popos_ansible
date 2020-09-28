@@ -1,6 +1,3 @@
-[submodule "roles/markosamuli.pyenv"]
-	path = roles/markosamuli.pyenv
-	url = https://github.com/markosamuli/ansible-pyenv
 [submodule "roles/PeterMosmans.customize-gnome"]
 	path = roles/PeterMosmans.customize-gnome
 	url = git@github.com:PeterMosmans/ansible-role-customize-gnome
