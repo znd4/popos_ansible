@@ -4,3 +4,6 @@
 [submodule "roles/PeterMosmans.customize-gnome"]
 	path = roles/PeterMosmans.customize-gnome
 	url = git@github.com:PeterMosmans/ansible-role-customize-gnome
+[submodule "roles/gantsign.visual-studio-code"]
+	path = roles/gantsign.visual-studio-code
+	url = git@github.com:gantsign/ansible-role-visual-studio-code.git
