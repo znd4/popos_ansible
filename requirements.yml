@@ -1,0 +1,3 @@
+- src: https://github.com/dswhitley/ansible-role-brave.git
+  scm: git
+  name: brave
