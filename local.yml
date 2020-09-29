@@ -8,6 +8,8 @@
 
   tasks:
     - include: tasks/users.yml
+    - name: Install roles
+      shell: /usr/bin/ansible-galaxy install -p ./roles -r requirements.yml
     - include: tasks/cron.yml
     - include: tasks/packages.yml
     - include: tasks/gnome.yml
