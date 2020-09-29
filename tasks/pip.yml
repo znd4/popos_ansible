@@ -12,10 +12,10 @@
 - name: Install packages with pipx
   become_user: zanedufour
   become: true
-  command: "/home/zanedufour/.pyenv/shims/pipx install --python python3.8 {{ item.pkg }}"
+  command: "/home/zanedufour/.local/bin/pipx install --python python3.8 {{ item.pkg }}"
   args:
     creates:
-      - /home/zanedufour/.pyenv/shims/{{ item.cmd }}
+      - /home/zanedufour/.local/bin/{{ item.cmd }}
   loop:
     - {"pkg": "black[d]", "cmd": "black"}
     - {"pkg": "pre-commit", "cmd": "pre-commit"}
