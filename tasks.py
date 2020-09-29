@@ -1,5 +1,6 @@
 from invoke import task, Context
 import getpass
+import shlex
 
 
 @task
@@ -9,10 +10,15 @@ def get_sudo_password(c):
 
 
 @task(get_sudo_password)
-def pull(c):
+def pull(c, force=False):
     """run ansible pull to sync"""
     c.sudo("sudo apt-get update")
     c.sudo("sudo apt-get install -y ansible")
     c.sudo(
-        "/usr/bin/ansible-pull --accept-host-key --private-key=/home/zanedufour/.ssh/id_rsa -U git@github.com:zdog234/popos_ansible.git"
+        "/usr/bin/ansible-pull "
+        f"{'--force' if force else ''} "
+        "--accept-host-key "
+        "--private-key=/home/zanedufour/.ssh/id_rsa "
+        "-U "
+        "git@github.com:zdog234/popos_ansible.git"
     )
