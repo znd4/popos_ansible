@@ -42,3 +42,7 @@
 - name: install visual studio code (vscode)
   include_role:
     name: gantsign.visual-studio-code
+
+- name: install brave
+  include_role:
+    name: brave
