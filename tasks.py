@@ -1,6 +1,5 @@
-from invoke import task, Context
+from invoke import task
 import getpass
-import shlex
 
 
 @task
