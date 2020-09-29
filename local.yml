@@ -13,3 +13,9 @@
     - include: tasks/gnome.yml
     - include: tasks/pyenv.yml
     - include: tasks/pip.yml
+
+- hosts: localhost
+  roles:
+    - role: jaredhocutt.brave_browser
+      vars:
+        brave_channel: beta

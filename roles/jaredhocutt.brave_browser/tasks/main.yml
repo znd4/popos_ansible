@@ -1,0 +1,27 @@
+---
+# tasks file for brave-browser
+
+- name: Create yum repository
+  yum_repository:
+    name: brave-browser
+    description: Brave Browser - $basearch
+    baseurl: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/$basearch
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core.asc
+    state: present
+  become: yes
+
+- name: Install Brave Browser
+  dnf:
+    name: brave-browser
+    state: present
+  become: yes
+  when: brave_channel == 'release'
+
+- name: Install Brave Browser
+  dnf:
+    name: brave-browser-{{ brave_channel }}
+    state: present
+  become: yes
+  when: brave_channel != 'release'
