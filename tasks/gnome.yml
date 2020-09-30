@@ -33,26 +33,26 @@
   become_user: zanedufour
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Pop-dark'"
 
-- name: customize gnome
-  include_role:
-    name: PeterMosmans.customize-gnome
-  vars:
-    gnome_user: "{{ user }}"
-    # gnome_extensions:
-      # - name: dash-to-dock@micxgx.gmail.com
-      #   url: https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.zip
-    gnome_gsettings:
-      - schema: org.gnome.desktop.peripherals.touchpad
-        key: click-method
-        value: areas
-    gnome_dconf:
-      - key: /org/gnome/shell/extensions/dash-to-dock/show-trash
-        value: "false"
-  loop:
-    - zanedufour
-    - zdufour
-  loop_control:
-    loop_var: user
+# - name: customize gnome
+#   include_role:
+#     name: PeterMosmans.customize-gnome
+#   vars:
+#     gnome_user: "{{ user }}"
+#     # gnome_extensions:
+#       # - name: dash-to-dock@micxgx.gmail.com
+#       #   url: https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.zip
+#     gnome_gsettings:
+#       - schema: org.gnome.desktop.peripherals.touchpad
+#         key: click-method
+#         value: areas
+#     gnome_dconf:
+#       - key: /org/gnome/shell/extensions/dash-to-dock/show-trash
+#         value: "false"
+#   loop:
+#     - zanedufour
+#     - zdufour
+#   loop_control:
+#     loop_var: user
 
 - name: install dash-to-dock
   become_user: "{{ user }}"
