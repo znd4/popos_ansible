@@ -56,8 +56,9 @@
 
 - name: install dash-to-dock
   become_user: "{{ user }}"
-  shell: "cd /submodules/dash-to-dock && make && make install"
+  shell: "make && make install"
   args:
+    chdir: submodules/dash-to-dock/
     creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
   loop:
     - zanedufour
