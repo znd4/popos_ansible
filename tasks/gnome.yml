@@ -76,7 +76,7 @@
     key: "{{ item.1.key }}"
     value: "{{ item.1.key }}"
   with_nested:
-    - "{{ users }}"
+    - "{{ personal_users }}"
     - "{{ settings }}"
 
 - name: Turn on gnome extensions
