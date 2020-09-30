@@ -37,6 +37,8 @@
       - brave-browser
       - brave-keyring
       - thunderbird
+      - network-manager-openconnect
+      - network-manager-openconnect-gnome
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
