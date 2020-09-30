@@ -63,8 +63,8 @@
     "
     # && mv /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock-ubuntu-dock-68ubuntu1_20.04.1/ \
     #   /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
-  args:
-    creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
+  # args:
+  #   creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
   loop:
     - zanedufour
     - zdufour
