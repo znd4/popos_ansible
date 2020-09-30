@@ -60,8 +60,8 @@
     https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.tar.gz \
     -O - \
     | tar -xz -C '/home/{{ user }}/.local/share/gnome-shell/extensions/' \
-    && mv /home/{{ user }}/.local/share/gnome-shell/extensions/ubuntu-dock-68ubuntu1_20.04.1/ \
-      /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/ \
+    && mv /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock-ubuntu-dock-68ubuntu1_20.04.1/ \
+      /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
     "
   args:
     creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
