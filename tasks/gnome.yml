@@ -74,6 +74,14 @@
       - {key: "/org/gnome/shell/extensions/dash-to-dock/extend-height", val: "true"}
       - {key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor", val: "true"}
       - {key: "/org/gnome/shell/extensions/dash-to-dock/show-trash", val: "false"}
+      - {
+        key: "/org/gnome/shell/favorite-apps",
+        val: "[
+          'brave-browser.desktop',
+          'code.desktop',
+          'org.gnome.Terminal.desktop'
+          ]"
+      }
   become_user: "{{ item.0 }}"
   community.general.dconf:
     key: "{{ item.1.key }}"
