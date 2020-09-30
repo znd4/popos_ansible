@@ -74,7 +74,7 @@
   become_user: "{{ item.0 }}"
   community.general.dconf:
     key: "{{ item.1.key }}"
-    value: "{{ item.1.key }}"
+    value: "{{ item.1.val }}"
   with_nested:
     - "{{ personal_users }}"
     - "{{ settings }}"
