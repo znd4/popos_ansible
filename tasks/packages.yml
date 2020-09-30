@@ -4,6 +4,11 @@
     keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 
 - apt_repository:
+    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com `lsb_release -sc` main"
+    state: present
+    filename: brave
+
+- apt_repository:
     repo: "{{ item }}"
     state: present
   loop:
@@ -11,7 +16,6 @@
     - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
     - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
     - ppa:system76/pop
-    - "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com `lsb_release -sc` main"
 
 - name: Install apt packages
   apt:
