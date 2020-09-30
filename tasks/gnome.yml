@@ -54,22 +54,22 @@
 #   loop_control:
 #     loop_var: user
 
-- name: install dash-to-dock
-  become_user: "{{ user }}"
-  shell: "wget -c \
-    https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.tar.gz \
-    -O - \
-    | tar -xz -C '/home/{{ user }}/.local/share/gnome-shell/extensions/' \
-    && mv /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock-ubuntu-dock-68ubuntu1_20.04.1/ \
-      /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
-    "
-  args:
-    creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
-  loop:
-    - zanedufour
-    - zdufour
-  loop_control:
-    loop_var: user
+# - name: install dash-to-dock
+#   become_user: "{{ user }}"
+#   shell: "wget -c \
+#     https://github.com/micheleg/dash-to-dock/archive/ubuntu-dock-68ubuntu1_20.04.1.tar.gz \
+#     -O - \
+#     | tar -xz -C '/home/{{ user }}/.local/share/gnome-shell/extensions/' \
+#     && mv /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock-ubuntu-dock-68ubuntu1_20.04.1/ \
+#       /home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
+#     "
+#   args:
+#     creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
+#   loop:
+#     - zanedufour
+#     - zdufour
+#   loop_control:
+#     loop_var: user
 
 - name: Turn on gnome extensions
   become_user: "{{ user }}"
