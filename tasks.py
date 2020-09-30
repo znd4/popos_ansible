@@ -13,6 +13,7 @@ def pull(c, force=False):
     """run ansible pull to sync"""
     c.sudo("sudo apt-get update")
     c.sudo("sudo apt-get install -y ansible")
+    c.sudo("/usr/bin/ansible-galaxy collection install community.general")
     c.sudo(
         "/usr/bin/ansible-pull "
         f"{'--force' if force else ''} "
