@@ -67,15 +67,17 @@
     loop_var: user
 
 - name: dash-to-dock settings
-  become_user: "{{ item[0] }}"
+  vars:
+    settings:
+      - key: "/org/gnome/shell/extensions/dash-to-dock/multi-monitor"
+        val: "true"
+  become_user: "{{ item.0 }}"
   community.general.dconf:
-    key: "{{ item[0][0] }}"
-    value: "{{ item[0][1] }}"
-  loop: "{{ ['zanedufour', 'zdufour'] |product([
-    [
-      ['/org/gnome/shell/extensions/dash-to-dock/multi-monitor', 'true']
-    ],
-  ])|list }}"
+    key: "{{ item.1.key }}"
+    value: "{{ item.1.key }}"
+  with_nested:
+    - "{{ users }}"
+    - "{{ settings }}"
 
 - name: Turn on gnome extensions
   become_user: "{{ user }}"

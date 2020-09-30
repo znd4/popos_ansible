@@ -5,6 +5,11 @@
     - name: update repositories
       apt: update_cache=yes
       changed_when: False
+  vars:
+    - users:
+        - zdufour
+        - zanedufour
+
 
   tasks:
     - include: tasks/users.yml
