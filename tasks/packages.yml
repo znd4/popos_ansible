@@ -21,24 +21,31 @@
 - name: Install apt packages
   apt:
     name:
+      - autoconf
+      - automake
+      - brave-browser
+      - brave-keyring
+      - build-essential
       - dconf-editor
       - fonts-firacode
       - gnome-shell-extensions
       - gnome-tweaks
       - htop
+      - jq
+      - libgtk-3-dev
       - libssl-dev
+      - libtomcrypt-dev
+      - libtool
+      - libxml2-dev
       - mc
+      - network-manager-openconnect
+      - network-manager-openconnect-gnome
       - openconnect
       - pop-theme
       - snapd
+      - thunderbird
       - tmux
       - xclip
-      - jq
-      - brave-browser
-      - brave-keyring
-      - thunderbird
-      - network-manager-openconnect
-      - network-manager-openconnect-gnome
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
