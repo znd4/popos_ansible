@@ -4,7 +4,7 @@
     keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 
 - apt_repository:
-    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com `lsb_release -sc` main"
+    repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com focal main"
     state: present
     filename: brave
 
