@@ -13,7 +13,10 @@ def pull(c, force=False):
     """run ansible pull to sync"""
     c.sudo("sudo apt-get update")
     c.sudo("sudo apt-get install -y ansible")
-    collections = ("community.general", "oefenweb.slack")
+    packages = ["oefenweb.slack"]
+    for package in packages:
+        c.sudo(f"/usr/bin/ansible-galaxy install {package}")
+    collections = ["community.general"]
     for collection in collections:
         c.sudo(f"/usr/bin/ansible-galaxy collection install {collection}")
     c.sudo(
