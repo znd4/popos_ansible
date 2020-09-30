@@ -53,13 +53,13 @@
 #     - zdufour
 #   loop_control:
 #     loop_var: user
-
 - name: install dash-to-dock
-  become_user: "{{ user }}"
-  shell: "make && make install"
-  args:
-    chdir: submodules/dash-to-dock/
-    creates: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
+  copy:
+    src: files/dash-to-dock/
+    dest: "/home/{{ user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: u=rw,g=r,o=r
   loop:
     - zanedufour
     - zdufour

@@ -7,6 +7,3 @@
 [submodule "roles/markosamuli.pyenv"]
 	path = roles/markosamuli.pyenv
 	url = git@github.com:zdog234/ansible-pyenv.git
-[submodule "submodules/dash-to-dock"]
-	path = submodules/dash-to-dock
-	url = https://github.com/micheleg/dash-to-dock.git
