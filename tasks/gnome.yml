@@ -84,7 +84,7 @@
       }
       - {
         key: "/org/gnome/desktop/wm/preferences/button-layout",
-        val: "appmenu:minimize,maximize,close"
+        val: "'appmenu:minimize,maximize,close'"
       }
   become_user: "{{ item.0 }}"
   community.general.dconf:
