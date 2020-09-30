@@ -66,7 +66,7 @@
   loop_control:
     loop_var: user
 
-- name: dash-to-dock settings
+- name: dconf settings
   vars:
     settings:
       - {key: "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme", val: "true"}
@@ -81,6 +81,10 @@
           'code.desktop',
           'org.gnome.Terminal.desktop'
           ]"
+      }
+      - {
+        key: "/org/gnome/desktop/wm/preferences/button-layout",
+        val: "appmenu:minimize,maximize,close"
       }
   become_user: "{{ item.0 }}"
   community.general.dconf:
