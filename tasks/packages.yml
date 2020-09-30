@@ -37,6 +37,7 @@
       - brave-browser
       - brave-keyring
       - thunderbird
+      - gnome-shell-extension-dashtodock
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
