@@ -65,3 +65,7 @@
 - name: install visual studio code (vscode)
   include_role:
     name: gantsign.visual-studio-code
+
+- name: install slack
+  include_role:
+    name: oefenweb.slack
