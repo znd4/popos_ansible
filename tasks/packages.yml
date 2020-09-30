@@ -35,6 +35,7 @@
       - jq
       - brave-browser
       - brave-keyring
+      - thunderbird
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
