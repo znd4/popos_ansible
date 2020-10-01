@@ -1,4 +1,4 @@
-- name: Install pyenv into {{ user }}
+- name: Install pyenv into "{{ user }}"
   include_role:
     name: markosamuli.pyenv
   vars:
@@ -20,7 +20,7 @@
   loop_control:
     loop_var: user
 
-- name: install poetry into {{ user }}
+- name: install poetry into "{{ user }}"
   shell: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
   args:
     creates: "/home/{{ user }}/.poetry"
