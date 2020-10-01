@@ -19,3 +19,12 @@
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
+
+- name: install poetry into {{ user }}
+  shell: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+  args:
+    creates: "/home/{{ user }}/.poetry"
+  become_user: "{{ user }}"
+  loop: "{{ personal_users }}"
+  loop_control: 
+    loop_var: user
