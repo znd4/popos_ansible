@@ -1,7 +1,7 @@
 # based on the docs: https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
 
 - name: add keys
-  apt_key: {{ item }}
+  apt_key: "{{ item }}"
   loop:
     - url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
       keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
