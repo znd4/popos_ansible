@@ -28,3 +28,13 @@
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
+
+- name: add poetry to path
+  become_user: "{{ user }}"
+  lineinfile:
+    path: "/home/{{ user }}/.bashrc"
+    regexp: "^export PATH=\$PATH\:\$HOME/\.poetry/bin"
+    line: "export PATH=$PATH:$HOME/.poetry/bin"
+  loop: "{{ personal_users }}"
+  loop_control:
+    loop_var: user
