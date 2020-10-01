@@ -21,7 +21,7 @@
     - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
     - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
     - ppa:system76/pop
-    - https://cli.github.com/packages
+    - "deb https://cli.github.com/packages focal main"
 
 - name: Install apt packages
   apt:
