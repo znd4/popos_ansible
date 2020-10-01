@@ -18,5 +18,5 @@
     - include: tasks/cron.yml
     - include: tasks/packages.yml
     - include: tasks/gnome.yml
-    - include: tasks/pyenv.yml
+    - include: tasks/python-setup.yml
     - include: tasks/pip.yml
