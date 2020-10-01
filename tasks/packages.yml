@@ -1,8 +1,12 @@
 # based on the docs: https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
-- name: add brave gpg key
-  apt_key:
-    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
-    keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+
+- name: add keys
+  apt_key: {{ item }}
+  loop:
+    - url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+      keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+    - keyserver: keyserver.ubuntu.com
+      id: C99B11DEB97541F0
 
 - apt_repository:
     repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com stable main"
@@ -17,6 +21,7 @@
     - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
     - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
     - ppa:system76/pop
+    - https://cli.github.com/packages
 
 - name: Install apt packages
   apt:
@@ -28,6 +33,7 @@
       - build-essential
       - dconf-editor
       - fonts-firacode
+      - gh
       - gnome-shell-extensions
       - gnome-tweaks
       - htop
