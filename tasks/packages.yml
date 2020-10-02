@@ -49,6 +49,7 @@
       - openconnect
       - pop-theme
       - snapd
+      - sqlite3
       - thunderbird
       - tmux
       - xclip
