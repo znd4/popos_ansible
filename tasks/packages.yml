@@ -40,6 +40,7 @@
       - jq
       - libgtk-3-dev
       - libssl-dev
+      - libsqlite3-dev
       - libtomcrypt-dev
       - libtool
       - libxml2-dev
