@@ -9,6 +9,17 @@
     - invoke
     - pipx
 
+# source <(inv --print-completion-script bash)
+- name: Set up invoke completion
+  become_user: "{{ user }}"
+  lineinfile:
+    path: "/home/{{ user }}/.bashrc"
+    regexp: "source \\<\\(inv --print-completion-script bash\\)"
+    line: "source <(inv --print-completion-script bash)"
+  loop: "{{ personal_users }}"
+  loop_control:
+    loop_var: user
+
 - name: Install packages with pipx
   become_user: zanedufour
   become: true
