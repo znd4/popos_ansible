@@ -92,3 +92,5 @@
 - name: install slack
   include_role:
     name: oefenweb.slack
+  args:
+    creates: /usr/bin/slack
