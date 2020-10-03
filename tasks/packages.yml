@@ -89,9 +89,10 @@
   include_role:
     name: gantsign.visual-studio-code
 
+- stat: path=/usr/bin/slack
+  register: slack_path
+
 - name: install slack
   include_role:
     name: oefenweb.slack
-  args:
-    creates:
-      - /usr/bin/slack
+  when: not slack_path.stat.exists
