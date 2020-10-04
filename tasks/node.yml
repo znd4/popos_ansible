@@ -1,0 +1,9 @@
+- name: install nvm
+  become_user: "{{ user }}"
+  shell: "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash"
+  args:
+    creates:
+      - "/home/{{ user }}/.nvm"
+  loop: "{{ personal_users }}"
+  loop_control:
+    loop_var: user
