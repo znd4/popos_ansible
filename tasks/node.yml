@@ -1,6 +1,7 @@
 - name: install nvm
   become_user: "{{ user }}"
-  shell: "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash"
+  become_flags: "-s /bin/bash"
+  shell: "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash"
   args:
     creates:
       - "/home/{{ user }}/.nvm"
