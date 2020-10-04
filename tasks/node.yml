@@ -4,6 +4,8 @@
   vars:
     become: yes
     become_user: "{{ user }}"
+    nvm_install: curl
+    nvm_dir: "/home/{{ user }}/.nvm"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
