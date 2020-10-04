@@ -13,7 +13,7 @@ def pull(c, force=False):
     """run ansible pull to sync"""
     c.sudo("sudo apt-get update")
     c.sudo("sudo apt-get install -y ansible")
-    packages = ["oefenweb.slack", "https://github.com/morgangraphics/ansible-role-nvm"]
+    packages = ["oefenweb.slack", "https://github.com/morgangraphics/ansible-role-nvm/archive/v1.4.2.tar.gz"]
     for package in packages:
         c.sudo(f"/usr/bin/ansible-galaxy install {package}")
     collections = ["community.general"]
