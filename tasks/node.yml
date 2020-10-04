@@ -1,10 +1,12 @@
 - name: install node with nvm
   include_role:
-    name: ansible-role-nvm
+    name: markosamuli.nvm
   vars:
     become: yes
     become_user: "{{ user }}"
-    nvm_dir: "/home/{{ user}}/.nvm"
+    nvm_shell_init: yes
+    nvm_shell_profile_scripts:
+      - .bashrc
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
