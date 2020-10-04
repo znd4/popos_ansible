@@ -23,7 +23,10 @@
 - name: Install packages with pipx
   become_user: zanedufour
   become: true
-  shell: "/usr/bin/env pipx install --python python3.8 {{ item.pkg }}"
+  command: "
+    /home/zanedufour/.local/bin/pipx install --python python3.8 {{ item.pkg }} \\
+    || /home/zanedufour/.pyenv/shims/pipx install --python python3.8 {{ item.pkg }} \\
+    "
   args:
     creates:
       - /home/zanedufour/.local/bin/{{ item.cmd }}
