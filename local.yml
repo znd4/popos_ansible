@@ -20,3 +20,4 @@
     - include: tasks/gnome.yml
     - include: tasks/python-setup.yml
     - include: tasks/pip.yml
+    - include: tasks/node.yml
