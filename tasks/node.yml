@@ -1,9 +1,8 @@
 - name: install node with nvm
   include_role:
-    name: role: stephdewit.nvm
-  vars:
-    become: yes
-    become_user: "{{ user }}"
+    name: stephdewit.nvm
+  become: yes
+  become_user: "{{ user }}"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
