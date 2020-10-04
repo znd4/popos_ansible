@@ -1,11 +1,10 @@
 - name: install node with nvm
   include_role:
-    name: stephdewit.nvm
+    name: ansible-role-nvm
   vars:
     become: yes
     become_user: "{{ user }}"
-    environment:
-      NVM_DIR: "/home/{{ user}}/.nvm"
+    nvm_dir: "/home/{{ user}}/.nvm"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
