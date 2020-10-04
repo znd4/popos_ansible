@@ -1,12 +1,11 @@
 - name: install node with nvm
   include_role:
-    name: markosamuli.nvm
+    name: stephdewit.nvm
   vars:
     become: yes
     become_user: "{{ user }}"
-    nvm_shell_init: yes
-    nvm_shell_profile_scripts:
-      - .bashrc
+    environment:
+      NVM_DIR: "/home/{{ user}}/.nvm"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
