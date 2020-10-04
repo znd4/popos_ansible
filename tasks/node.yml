@@ -1,11 +1,11 @@
-- name: install node with nvm
-  include_role:
-    name: stephdewit.nvm
-  vars:
-    become: yes
-    become_user: "{{ user }}"
-    environment:
-      NVM_DIR: "/home/{{ user}}/.nvm"
+- name: install nvm
+  shell: "
+    NVM_DIR=/home/{{ user }} \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+  "
+  args:
+    creates: "/home/{{ user }}/.nvm"
+  become_user: "{{ user }}"
   loop: "{{ personal_users }}"
-  loop_control:
+  loop_control: 
     loop_var: user
