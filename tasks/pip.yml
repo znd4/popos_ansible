@@ -23,7 +23,7 @@
 - name: Install packages with pipx
   become_user: zanedufour
   become: true
-  command: "
+  shell: "
     /home/zanedufour/.local/bin/pipx install --python python3.8 {{ item.pkg }} \\
     || /home/zanedufour/.pyenv/shims/pipx install --python python3.8 {{ item.pkg }} \\
     "
