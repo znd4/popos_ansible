@@ -12,7 +12,8 @@
 
 - name: install node with nvm
   shell: "
-    NODE_VERSION=14 \
+    . /etc/profile &&
+    NODE_VERSION=14
     nvm install $NODE_VERSION --default --latest-npm
   "
   # args:
