@@ -11,16 +11,9 @@
     loop_var: user
 
 - name: install node with nvm
-  command: "
-    sudo -iu {{ user }} \
-    NODE_VERSION=14 \
-    nvm install $NODE_VERSION --default --latest-npm
-  "
-  # args:
-  #   creates: "/home/{{ user }}/.nvm"
+  shell: "nvm install 14 --default --latest-npm"
+  sudo_user: "{{ user }} -i"
   become_user: "{{ user }}"
-  # executable: /bin/bash -l
-  # sudo_user: "{{ user }} -i"
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
