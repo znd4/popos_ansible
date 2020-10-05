@@ -13,7 +13,7 @@
 - name: install node with nvm
   shell: "nvm install 14 --default --latest-npm"
   sudo_user: "{{ user }} -i"
-  become_user: "{{ user }}"
+  # become_user: "{{ user }}"
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
