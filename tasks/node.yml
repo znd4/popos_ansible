@@ -12,7 +12,7 @@
 
 - name: install node with nvm
   shell: "
-    export NODE_VERSION=14
+    NODE_VERSION=14 \
     nvm install $NODE_VERSION --default --latest-npm
   "
   # args:
