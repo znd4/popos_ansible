@@ -17,8 +17,9 @@
   "
   # args:
   #   creates: "/home/{{ user }}/.nvm"
-  # become_user: "{{ user }}"
-  sudo_user: "{{ user }} -i"
+  become_user: "{{ user }}"
+  executable: /bin/bash -l
+  # sudo_user: "{{ user }} -i"
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
