@@ -5,6 +5,7 @@
   loop:
     - url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
       keyring: /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+    - url: https://updates.signal.org/desktop/apt/keys.asc
     - keyserver: keyserver.ubuntu.com
       id: C99B11DEB97541F0
 
@@ -12,6 +13,11 @@
     repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com stable main"
     state: present
     filename: brave-browser-release
+
+- apt_repository:
+    repo: "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+    state: present
+    filename: signal-xenial
 
 - apt_repository:
     repo: "{{ item }}"
@@ -59,6 +65,7 @@
       - openconnect
       - pop-theme
       - python-openssl
+      - signal-desktop
       - snapd
       - sqlite3
       - steam-installer
