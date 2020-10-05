@@ -9,3 +9,15 @@
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
+
+- name: install node with nvm
+  shell: "
+    export NODE_VERSION=14
+    nvm install $NODE_VERSION --default --latest-npm
+  "
+  # args:
+  #   creates: "/home/{{ user }}/.nvm"
+  become_user: "{{ user }}"
+  loop: "{{ personal_users }}"
+  loop_control: 
+    loop_var: user
