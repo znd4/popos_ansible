@@ -12,8 +12,18 @@
 
 - name: install node with nvm
   shell: bash -ilc "nvm install 12.18.3 --default --latest-npm"
-  # sudo_user: "{{ user }} -i"
   become_user: "{{ user }}"
   loop: "{{ personal_users }}"
   loop_control: 
     loop_var: user
+
+- name: install global node packages
+  include_role:
+    name: community.general.npm
+  vars:
+    become_user: "{{ item.0 }}"
+    name: "{{ item.1 }}"
+    global: yes
+  with_nested:
+    - "{{ personal_users }}"
+    - ["nativefier"]
