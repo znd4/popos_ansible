@@ -9,6 +9,9 @@
     - invoke
     - pipx
 
+- debug:
+    msg: "finished installing python3.8 libraries"
+
 # source <(inv --print-completion-script bash)
 - name: Set up invoke completion
   become_user: "{{ user }}"
@@ -19,6 +22,9 @@
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
+
+- debug:
+    msg: "finished setting up invoke completion"
 
 - name: Install packages with pipx
   become_user: zanedufour
