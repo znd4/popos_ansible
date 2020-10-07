@@ -22,6 +22,7 @@
     name: community.general.npm
   vars:
     become_user: "{{ item.0 }}"
+    become: true
     name: "{{ item.1 }}"
     state: present
     global: yes
