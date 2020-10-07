@@ -19,11 +19,12 @@
 
 - name: install global node packages
   include_role:
-    name: npm
+    name: community.general.npm
   vars:
     become_user: "{{ item.0 }}"
     name: "{{ item.1 }}"
+    state: present
     global: yes
   with_nested:
     - "{{ personal_users }}"
-    - ["nativefier"]
+    - ['nativefier']
