@@ -20,8 +20,8 @@
 - name: set node version with nvm
   lineinfile:
     path: "/home/{{ user }}/.bashrc"
-    regexp: "nvm use 12\\.18\\.3"
-    line: "nvm use 12.18.3"
+    regexp: "nvm use 12\\.18\\.3.*"
+    line: "nvm use 12.18.3 > /dev/null"
   become_user: "{{ user }}"
   loop: "{{ personal_users }}"
   loop_control:
