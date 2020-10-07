@@ -1,13 +1,13 @@
 - name: install python3.8 libraries
-  become_user: zanedufour
+  become_user: "{{ item.1 }}"
   become: true
   pip:
-    name: "{{ item }}"
-    executable: /home/zanedufour/.pyenv/shims/pip3.8
+    name: "{{ item.1 }}"
+    executable: "/home/{{ item.1 }}/.pyenv/shims/pip3.8"
     extra_args: "--user"
-  loop:
-    - invoke
-    - pipx
+  with_nested:
+    - "{{ personal_users }}"
+    - ['invoke', 'pipx']
 
 - debug:
     msg: "finished installing python3.8 libraries"
