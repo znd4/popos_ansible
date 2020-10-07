@@ -27,7 +27,7 @@
 - name: remove nvm use from .bashrc
   lineinfile:
     path: "/home/{{ user }}/.bashrc"
-    regexp: "nvm use \d{1,2}\\.\d{1,2}\\.\d{1,2}.*"
+    regexp: "nvm use \\d{1,2}\\.\\d{1,2}\\.\\d{1,2}.*"
     # line: "nvm use 12.18.3 > /dev/null"
     state: absent
   become_user: "{{ user }}"
