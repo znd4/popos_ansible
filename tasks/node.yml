@@ -27,4 +27,4 @@
     global: yes
   with_nested:
     - "{{ personal_users }}"
-    - ['nativefier']
+    - "['nativefier']"
