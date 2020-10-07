@@ -18,14 +18,17 @@
     loop_var: user
 
 - name: set node version with nvm
-  shell: bash -ilc "nvm alias default 12.18.3"
+  lineinfile:
+    path: "/home/{{ user }}/.bashrc"
+    regexp: "nvm use 12\\.18\\.3"
+    line: "nvm use 12.18.3"
   become_user: "{{ user }}"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
 
 - name: install global node packages
-  shell: "npm install {{ item.1 }}"
+  shell: bash -ilc "npm install {{ item.1 }}"
   become_user: "{{ item.0 }}"
   args:
     creates: "/home/{{ item.0 }}/.nvm/versions/node/v12.18.3/bin/{{item.1}}"
