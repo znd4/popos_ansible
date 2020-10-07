@@ -1,9 +1,9 @@
 - name: install python3.8 libraries
-  become_user: "{{ item.1 }}"
+  become_user: "{{ item.0 }}"
   become: true
   pip:
     name: "{{ item.1 }}"
-    executable: "/home/{{ item.1 }}/.pyenv/shims/pip3.8"
+    executable: "/home/{{ item.0 }}/.pyenv/shims/pip3.8"
     extra_args: "--user"
   with_nested:
     - "{{ personal_users }}"
