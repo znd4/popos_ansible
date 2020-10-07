@@ -17,8 +17,8 @@
   become_user: "{{ user }}"
   lineinfile:
     path: "/home/{{ user }}/.bashrc"
-    regexp: "source \\<\\(inv --print-completion-script bash\\)"
-    line: "source <(inv --print-completion-script bash)"
+    regexp: "source \\<\\(.*inv\\w* --print-completion-script bash\\)"
+    line: "source <(python3.8 -m invoke --print-completion-script bash)"
   loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
