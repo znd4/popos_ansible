@@ -34,6 +34,7 @@
     name:
       - autoconf
       - automake
+      - bashtop
       - brave-browser
       - brave-keyring
       - build-essential
