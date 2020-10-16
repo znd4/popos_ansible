@@ -21,3 +21,4 @@
     - include: tasks/python-setup.yml
     - include: tasks/pip.yml
     - include: tasks/node.yml
+    - include: tasks/aliases.yml

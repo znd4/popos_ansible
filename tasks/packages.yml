@@ -37,6 +37,7 @@
       - apt-transport-https
       - autoconf
       - automake
+      - bashtop
       - brave-browser
       - brave-keyring
       - build-essential

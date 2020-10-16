@@ -1,0 +1,22 @@
+- name: install aliases
+  become_user: "{{ item.0 }}"
+  lineinfile:
+    path: "/home/{{ item.0 }}/.bashrc"
+    regexp: "{{ item.1.regexp }}"
+    line: "{{ item.1.line }}"
+  with_nested:
+    - "{{ personal_users }}"
+    - - line: "alias ipy='python -m IPython'"
+        regexp: "alias ipy\\=\\'python \\-m IPython\\'"
+      - line: "alias ipy36='python3.6 -m IPython'"
+        regexp: "alias ipy\\=\\'python3\\.6 \\-m IPython\\'"
+      - line: "alias ipy37='python3.7 -m IPython'"
+        regexp: "alias ipy\\=\\'python3\\.7 \\-m IPython\\'"
+      - line: "alias ipy38='python3.8 -m IPython'"
+        regexp: "alias ipy\\=\\'python3\\.8 \\-m IPython\\'"
+      - line: "alias python3=python3.8"
+        regexp: "alias python3\\=python3\\.8"
+      - line: "alias ipy3='python3 -m IPython'"
+        regexp: "alias ipy3\\=\\'python3 \\-m IPython\\'"
+      - line: "alias python3=python3.8"
+        regexp: "alias python3\\=python3\\.8"
