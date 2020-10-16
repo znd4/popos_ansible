@@ -8,6 +8,7 @@
     - url: https://updates.signal.org/desktop/apt/keys.asc
     - keyserver: keyserver.ubuntu.com
       id: C99B11DEB97541F0
+    - url: https://download.docker.com/linux/ubuntu/gpg
 
 - apt_repository:
     repo: "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com stable main"
@@ -28,22 +29,29 @@
     - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
     - ppa:system76/pop
     - "deb https://cli.github.com/packages focal main"
+    - "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
 - name: Install apt packages
   apt:
     name:
+      - apt-transport-https
       - autoconf
       - automake
       - brave-browser
       - brave-keyring
       - build-essential
+      - ca-certificates
+      - containerd.io
       - curl
       - dconf-editor
+      - docker-ce
+      - docker-ce-cli
       - fonts-firacode
       - gh
       - git
       - gnome-shell-extensions
       - gnome-tweaks
+      - gnupg-agent
       - htop
       - jq
       - libbz2-dev
@@ -67,8 +75,10 @@
       - python-openssl
       - signal-desktop
       - snapd
+      - software-properties-common
       - sqlite3
       - steam-installer
+      - sysfsutils
       - thunderbird
       - tk-dev
       - tmux
@@ -76,7 +86,6 @@
       - xclip
       - xz-utils
       - zlib1g-dev
-      - sysfsutils
 
 - name: Add the flathub flatpak repository remote to the user installation
   flatpak_remote:
