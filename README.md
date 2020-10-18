@@ -31,8 +31,8 @@ python3 -m invoke pull
 
 ## Todo
 
-- [ ] loop usernames
-- [ ] parametrize usernames
+- [x] loop usernames
+- [x] parametrize usernames
 - [ ] Add fira code font
-- [ ] gnome customization
-- [ ] install visual studio code
+- [x] gnome customization
+- [x] install visual studio code
