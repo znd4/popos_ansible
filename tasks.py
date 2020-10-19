@@ -46,7 +46,7 @@ def pull(c, force=False):
         "/usr/bin/ansible-pull "
         f"{'--force' if force else ''} "
         "--accept-host-key "
-        f"--extra-vars='{json.dumps(dict(personal_users=c.config.personal_users))}'"
+        f"--extra-vars='{json.dumps(dict(personal_users=c.config.personal_users))}' "
         "--private-key=/home/zanedufour/.ssh/id_rsa "
         "-U "
         "git@github.com:zdog234/popos_ansible.git"
