@@ -3,4 +3,4 @@
     user: "ansible"
     name: "ansible provision"
     minute: "*/10"
-    job: "/usr/bin/ansible-pull --accept-host-key --private-key=/home/ansible/.ssh/id_rsa -o -U git@github.com:zdog234/popos_ansible.git > /dev/null"
+    job: "/usr/bin/ansible-pull --extra-vars=\"personal_users={{ personal_users }}\"--accept-host-key --private-key=/home/ansible/.ssh/id_rsa -o -U git@github.com:zdog234/popos_ansible.git > /dev/null"
