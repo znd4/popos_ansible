@@ -40,9 +40,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
-  loop:
-    - zanedufour
-    - zdufour
+  loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
 
@@ -91,8 +89,6 @@
       'dash-to-dock@micxgx.gmail.com'
       ]"
     state: present
-  loop:
-    - zanedufour
-    - zdufour
+  loop: "{{ personal_users }}"
   loop_control:
     loop_var: user
