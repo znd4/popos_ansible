@@ -12,7 +12,7 @@ def get_sudo_password(c):
 
 @task(get_sudo_password)
 def dependencies(c, force=False):
-    c.run(f"{sys.executable} -m python pip install inquirer")
+    c.run(f"{sys.executable} -m pip install inquirer")
     import inquirer
 
     c.config.personal_users = inquirer.checkbox(
