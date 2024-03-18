@@ -7,14 +7,14 @@
     creates: "/home/{{ user }}/.nvm"
   become_user: "{{ user }}"
   loop: "{{ personal_users }}"
-  loop_control: 
+  loop_control:
     loop_var: user
 
 - name: install node with nvm
   shell: bash -ilc "nvm install 12.18.3 --default --latest-npm"
   become_user: "{{ user }}"
   loop: "{{ personal_users }}"
-  loop_control: 
+  loop_control:
     loop_var: user
 
 - name: set node version with nvm
