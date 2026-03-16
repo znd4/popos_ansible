@@ -1,5 +1,5 @@
 - name: install cron job (ansible-pull)
-  cron: 
+  cron:
     user: "ansible"
     name: "ansible provision"
     minute: "*/10"
